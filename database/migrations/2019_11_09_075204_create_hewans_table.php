@@ -17,7 +17,8 @@ class CreateHewansTable extends Migration
 						$table->bigIncrements('id');
 						$table->string("h_nama");
 						$table->mediumText("h_deskripsi");
-						$table->bigInteger("h_harga");
+                        $table->bigInteger("h_harga");
+                        $table->boolean("status");
             $table->timestamps();
         });
     }
