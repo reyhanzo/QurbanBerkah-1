@@ -16,7 +16,7 @@ class CreateGambarHewansTable extends Migration
 		Schema::create('gambar_hewans', function (Blueprint $table) {
 			$table->bigIncrements("id");
 			$table->bigInteger('hewans_id');
-			$table->string("gh_path");
+			$table->string("path");
 			$table->timestamps();
 		});
 	}

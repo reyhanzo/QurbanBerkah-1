@@ -15,9 +15,9 @@ class CreateHewansTable extends Migration
     {
         Schema::create('hewans', function (Blueprint $table) {
 						$table->bigIncrements('id');
-						$table->string("h_nama");
-						$table->mediumText("h_deskripsi");
-                        $table->bigInteger("h_harga");
+						$table->string("nama");
+						$table->mediumText("deskripsi");
+                        $table->bigInteger("harga");
                         $table->boolean("status");
             $table->timestamps();
         });
