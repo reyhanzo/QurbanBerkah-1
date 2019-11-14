@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHewansTable extends Migration
+class CreateTransactionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateHewansTable extends Migration
      */
     public function up()
     {
-        Schema::create('hewans', function (Blueprint $table) {
-						$table->bigIncrements('id');
-						$table->string("h_nama");
-						$table->mediumText("h_deskripsi");
-						$table->bigInteger("h_harga");
+        Schema::create('transaction', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('hewans_id');
+            $table->bigInteger('users_id');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateHewansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hewans');
+        Schema::dropIfExists('transaction');
     }
 }
