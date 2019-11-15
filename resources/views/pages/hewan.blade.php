@@ -16,6 +16,7 @@
 			<h5 class="card-title">{{ $hewan->nama }}</h5>
 			<h6 class="card-text">Rp{{ $hewan->harga }}</h6>
 			<a class="btn btn-primary" href="{{ url("/hewan/$hewan->id") }}">Lihat</a>
+			<a class="btn btn-danger" href="{{ url("/hewan/$hewan->id") }}">Hapus</a>
 		</div>
 	</div>
 	@endforeach
