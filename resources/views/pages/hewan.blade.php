@@ -9,7 +9,6 @@
 	@foreach ($listhewan as $hewan)
 	<div class="card">
 	@if($hewan->satugambarhewan == null)
-	wkwkwk --> {{ Auth::user()->admin }}
 	@else
 		<img class="card-img-top" src="{{ asset('storage') }}/{{$hewan->satugambarhewan}}" style="max-width: 100%;height: auto" alt=":v">
 	@endif
@@ -25,7 +24,9 @@
 @else
 <p>Tidak ada hewan tersedia :(</p>
 @endif
-@if ( Auth::user()->admin == 0 )
+@if ( Auth::user() == Null)
+	bruh
+@elseif ( Auth::user()->admin == 0 )
 <a class="btn btn-primary" href="{{ url("/hewan/$hewan->id") }}">Tambah</a>
 @endif
 @endsection
