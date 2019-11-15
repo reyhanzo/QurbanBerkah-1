@@ -4,6 +4,20 @@
 <div class="mb-3">
 	<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
 </div>
+
+<?php $islogin = 0;
+	if ( Auth::user() != Null ){
+		if ( Auth::user()->admin == 0 ){
+			$islogin = 1;
+		}
+		else{
+			$islogin = 2;
+		}
+	}
+echo $islogin
+?>
+
+
 @if (count($listhewan) > 0)
 <div class="card-deck mb-5">
 	@foreach ($listhewan as $hewan)
@@ -16,7 +30,9 @@
 			<h5 class="card-title">{{ $hewan->nama }}</h5>
 			<h6 class="card-text">Rp{{ $hewan->harga }}</h6>
 			<a class="btn btn-primary" href="{{ url("/hewan/$hewan->id") }}">Lihat</a>
-			<a class="btn btn-danger" href="{{ url("/hewan/$hewan->id") }}">Hapus</a>
+			@if ($islogin == 2 )
+				<a class="btn btn-danger" href="{{ url("/hewan/$hewan->id") }}">Hapus</a>
+			@endif
 		</div>
 	</div>
 	@endforeach
@@ -25,9 +41,7 @@
 @else
 <p>Tidak ada hewan tersedia :(</p>
 @endif
-@if ( Auth::user() == Null)
-	bruh
-@elseif ( Auth::user()->admin == 0 )
+@if ( $islogin == 2 )
 <a class="btn btn-primary" href="{{ url("/hewan/$hewan->id") }}">Tambah</a>
 @endif
 @endsection
