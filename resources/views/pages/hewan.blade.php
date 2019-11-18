@@ -42,6 +42,6 @@ echo $islogin
 <p>Tidak ada hewan tersedia :(</p>
 @endif
 @if ( $islogin == 2 )
-<a class="btn btn-primary" href="{{ url("/hewan/$hewan->id") }}">Tambah</a>
+<a class="btn btn-primary" href="{{ url("/tambahhewan") }}">Tambah</a>
 @endif
 @endsection

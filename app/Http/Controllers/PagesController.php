@@ -14,7 +14,12 @@ class PagesController extends Controller
 		return view("pages.hewan");
 	}
 
+	public function tambahhewan(){
+		return view("pages.tambahhewan");
+	}
+
 	public function pakan() {
 		return view("pages.pakan");
 	}
+	
 }

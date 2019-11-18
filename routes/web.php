@@ -14,6 +14,7 @@
 Route::get("/", "PagesController@home");
 Route::get("/pakan", "PagesController@pakan");
 Route::resource("hewan", "HewanController");
+Route::get("/tambahhewan", "PagesController@tambahhewan");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
