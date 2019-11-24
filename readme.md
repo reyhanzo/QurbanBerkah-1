@@ -25,5 +25,4 @@ php artisan ui bootstrap
    Note: kenapa hewans bukan hewan, itu fitur dari laravel :v
    
    Note2: Kalo gak suka ganti di modelnya, tambahin attribute $table, selengkapnya cek [docs](https://laravel.com/docs/master/eloquent)
-<br>
-Pranala tambahan: 1. https://github.com/svenluijten/artisan-view < generate blade 
+8. [artisan-view](https://github.com/svenluijten/artisan-view) < generate blade

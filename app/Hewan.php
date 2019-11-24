@@ -11,7 +11,7 @@ class Hewan extends Model
 	];
 
 	protected $attributes = [
-		"terbeli" => false
+		"status" => false
 	];
 	
 	public function gambarhewan()
