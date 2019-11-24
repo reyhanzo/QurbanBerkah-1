@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mb-3">
+<div class="container">
+<div class="text-center">
 	<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
 </div>
 
@@ -14,7 +15,7 @@
 			$islogin = 2;
 		}
 	}
-echo $islogin
+//echo $islogin
 ?>
 
 
@@ -44,4 +45,5 @@ echo $islogin
 @if ( $islogin == 2 )
 <a class="btn btn-primary" href="{{ url("/tambahhewan") }}">Tambah</a>
 @endif
+</div>
 @endsection

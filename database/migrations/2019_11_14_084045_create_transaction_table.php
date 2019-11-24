@@ -6,29 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTransactionTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('transaction', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('hewans_id');
-            $table->bigInteger('users_id');
-            $table->string('status');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('transaction', function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->bigInteger('hewans_id');
+			$table->bigInteger('users_id');
+			$table->string('status');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('transaction');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('transaction');
+	}
 }

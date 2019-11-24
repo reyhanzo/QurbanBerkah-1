@@ -14,15 +14,7 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		//$listhewan = Hewan::orderBy("nama", "asc")->paginate(25);
-		//return view("pages.hewan")->with("listhewan", $listhewan);
-		$gambar = Hewan::with("satugambarhewan")->get();
-		$listhewan = new \Illuminate\Pagination\LengthAwarePaginator(
-			$gambar->forPage(1, 25),
-			$gambar->count(),
-			25,
-			1
-		);
+		$listhewan = Hewan::with("gambarhewan")->get();
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
 
@@ -56,11 +48,7 @@ class HewanController extends Controller
 	public function show($id)
 	{
 		$hewan = Hewan::find($id);
-		$data = [
-			"hewan" => $hewan,
-			"gambar" => $hewan->gambarhewan
-		];
-		return view("pages.detailhewan")->with($data);
+		return view("pages.detailhewan")->with("hewan", $hewan);
 	}
 
 	/**

@@ -6,30 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateHewansTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('hewans', function (Blueprint $table) {
-						$table->bigIncrements('id');
-						$table->string("nama");
-						$table->mediumText("deskripsi");
-                        $table->bigInteger("harga");
-                        $table->boolean("status");
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('hewans', function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->string("nama");
+			$table->mediumText("deskripsi");
+			$table->bigInteger("harga");
+			$table->boolean("status");
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('hewans');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('hewans');
+	}
 }

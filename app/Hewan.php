@@ -6,13 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hewan extends Model
 {
+	protected $fillable = [
+		"nama", "deskripsi", "harga"
+	];
+
+	protected $attributes = [
+		"terbeli" => false
+	];
+	
 	public function gambarhewan()
 	{
 		return $this->hasMany("App\GambarHewan");
-	}
-
-	public function satugambarhewan()
-	{
-		return $this->hasOne("App\GambarHewan")->oldest();
 	}
 }

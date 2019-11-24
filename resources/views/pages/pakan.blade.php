@@ -1,5 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-<h1>Jadwal pakan ternak</h1>
+<div class="container">
+	<h1 class="text-center">Jadwal pakan ternak</h1>
+</div>
 @endsection
