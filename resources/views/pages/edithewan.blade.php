@@ -11,10 +11,26 @@
 		{!! Form::open(["action" => ["HewanController@update", $hewan->id], "method" => "PUT", "files" => true]) !!}
 		<div class="row">
 			<div class="col-4">
-				<p>Edit gambar di sini</p>
+				<strong>Edit gambar<br></strong>
+				@for ($i = 0; $i < count($hewan->gambarhewan); $i++)
+				{{ $hewan->gambarhewan[$i]->path }}
+				<div class="form-check">
+					{!! Form::radio("{$hewan->gambarhewan[$i]->path}", "simpan", true, ["class" => "form-check-input"]) !!}
+					{!! Form::label("{$hewan->gambarhewan[$i]->path}", "Simpan", ["class" => "form-check-label"]) !!}
+				</div>
+				<div class="form-check">
+					{!! Form::radio("{$hewan->gambarhewan[$i]->path}", "hapus", false, ["class" => "form-check-input"]) !!}
+					{!! Form::label("{$hewan->gambarhewan[$i]->path}", "Hapus", ["class" => "form-check-label"]) !!}
+				</div>
+				@endfor
+				<br>
+				<div class="form-group">
+					<strong>{!! Form::label("gambarhewan[]", "Tambah gambar") !!}</strong>
+					{!! Form::file("gambarhewan[]", ["multiple" => "multiple"]) !!}
+				</div>
 			</div>
+
 			<div class="col-8">
-				
 				<div class="form-group">
 					{!! Form::label("nama", "Nama hewan") !!}
 					{!! Form::text("nama", $hewan->nama, ["class" => "form-control"]) !!}
