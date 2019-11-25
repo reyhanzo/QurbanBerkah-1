@@ -10,8 +10,10 @@
 		{!! Form::open(["action" => "HewanController@store", "method" => "POST", "files" => true]) !!}
 		<div class="row">
 			<div class="col-4">
-				<p>Upload gambar di sini</p>
-				{!! Form::file("gambarhewan[]", ["multiple" => "multiple"]) !!}
+				<div class="form-group">
+					{!! Form::label("gambarhewan[]", "Upload gambar") !!}
+					{!! Form::file("gambarhewan[]", ["multiple" => "multiple"]) !!}
+				</div>
 			</div>
 			<div class="col-8">
 				

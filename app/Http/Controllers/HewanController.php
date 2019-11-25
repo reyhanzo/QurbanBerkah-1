@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Hewan;
 use App\GambarHewan;
 
@@ -122,6 +123,14 @@ class HewanController extends Controller
 	 */
 	public function destroy($id)
 	{
-			//
+		$hewan = Hewan::find($id);
+		$hewan->load("gambarhewan");
+		//return $hewan;
+		foreach ($hewan->gambarhewan as $value) {
+			Storage::delete("public/{$value->path}");
+			$value->delete();
+		}
+		$hewan->delete();
+		return redirect("/hewan")->with("success", "Hewan berhasil dihapus");
 	}
 }
