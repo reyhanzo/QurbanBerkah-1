@@ -36,14 +36,14 @@
 	</div>
 	@endif
 	
-	@if (Auth::user() && Auth::user()->admin == 1)
-	<a class="card-link btn btn-primary" href="{{ url("tambahhewan") }}">Tambah</a>
-	@endif
 		@endforeach
 	@else
 	<div class="jumbotron text-center">
 		<h1>Tidak ada hewan tersedia :(</h1>
 	</div>
 	@endif
+	
 </div>
+
+
 @endsection
