@@ -50,17 +50,19 @@ class HewanController extends Controller
 		$hewan->harga = $request->input("harga");
 		$hewan->save();
 
-		foreach ($request->file("gambarhewan") as $value) {
-			$gambar = new GambarHewan();
-			$gambar->hewan_id = $hewan->id;
-			$fullname = $value->getClientOriginalName();
-			$filename = pathinfo($fullname, PATHINFO_FILENAME);
-			$ext = $value->getClientOriginalExtension();
-			$timenow = time();
-			$storedname = "{$filename}_{$timenow}.{$ext}";
-			$value->storeAs("public", $storedname);
-			$gambar->path = $storedname;
-			$gambar->save();
+		if ($request->has("gambarhewan")) {
+			foreach ($request->file("gambarhewan") as $value) {
+				$gambar = new GambarHewan();
+				$gambar->hewan_id = $hewan->id;
+				$fullname = $value->getClientOriginalName();
+				$filename = pathinfo($fullname, PATHINFO_FILENAME);
+				$ext = $value->getClientOriginalExtension();
+				$timenow = time();
+				$storedname = "{$filename}_{$timenow}.{$ext}";
+				$value->storeAs("public", $storedname);
+				$gambar->path = $storedname;
+				$gambar->save();
+			}
 		}
 
 		return redirect("/hewan")->with("success", "Hewan berhasil ditambah");
@@ -107,6 +109,7 @@ class HewanController extends Controller
 		]);
 
 		$hewan = Hewan::find($id);
+		$hewan->load("gambarhewan");
 		$hewan->nama = $request->input("nama");
 		$hewan->deskripsi = $request->input("deskripsi");
 		$hewan->harga = $request->input("harga");
@@ -125,7 +128,6 @@ class HewanController extends Controller
 	{
 		$hewan = Hewan::find($id);
 		$hewan->load("gambarhewan");
-		//return $hewan;
 		foreach ($hewan->gambarhewan as $value) {
 			Storage::delete("public/{$value->path}");
 			$value->delete();
