@@ -32,8 +32,10 @@
 					@if (Auth::user() && Auth::user()->admin == 1)
 						<p>{{ $hewan->id }}</p>
 					@endif	
-					<p>{{ $hewan->nama }}</p>
+					<p><b>Nama Hewan</b> : {{ $hewan->nama }}</p>
+					<p><b>Deskripsi Hewan</b></p>
 					<p>{{ $hewan->deskripsi }}</p>
+					<p><b>Harga Hewan</b></p>
 					<p>Rp{{ $hewan->harga }}</p>
 				</div>
 			</div>
