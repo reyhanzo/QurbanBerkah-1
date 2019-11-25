@@ -30,4 +30,15 @@ class PagesController extends Controller
 		return view("pages.pakan");
 	}
 	
+	public function pengguna() {
+		return view("pages.pengguna");
+	}
+
+	public function tambahpengguna() {
+		return view("pages.tambahpengguna");
+	}
+
+	public function editpengguna() {
+		return view("pages.editpengguna");
+	}
 }

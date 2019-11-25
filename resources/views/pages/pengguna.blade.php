@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
-	<h1 class="text-center">Program Angsuran</h1>
+	<h1 class="text-center">Pengguna</h1>
 </div>
 @endsection
+
