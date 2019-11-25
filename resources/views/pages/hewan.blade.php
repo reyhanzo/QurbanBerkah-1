@@ -29,6 +29,10 @@
 	@if ($loop->index % 3 == 0)
 	</div>
 	@endif
+	
+	@if (Auth::user() && Auth::user()->admin == 1)
+	<a class="card-link btn btn-primary" href="{{ url("tambahhewan") }}">Tambah</a>
+	@endif
 		@endforeach
 	@else
 	<div class="jumbotron text-center">
