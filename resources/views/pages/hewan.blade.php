@@ -6,6 +6,12 @@
 		<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
 	</div>
 
+	@if (Auth::user() && Auth::user()->admin == 1)
+	<div class="mb-3">
+		<a class="btn btn-primary" href="{{ url("/hewan/create") }}">Tambah</a>
+	</div>
+	@endif
+
 	@if (count($listhewan) > 0)
 	<div class="row">
 		@foreach ($listhewan as $hewan)

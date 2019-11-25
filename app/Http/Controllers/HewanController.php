@@ -25,7 +25,7 @@ class HewanController extends Controller
 	 */
 	public function create()
 	{
-			//
+		return view("pages.tambahhewan");
 	}
 
 	/**
