@@ -40,7 +40,7 @@ class HewanController extends Controller
 		$this->validate($request, [
 			"nama" => "required",
 			"deskripsi" => "required",
-			"harga" => "numeric"
+			"harga" => "required|numeric"
 		]);
 
 		$hewan = new Hewan();
@@ -85,8 +85,9 @@ class HewanController extends Controller
 	 */
 	public function edit($id)
 	{
-			//
-			return view("pages.edithewan");
+		$hewan = Hewan::find($id);
+		$hewan->load("gambarhewan");
+		return view("pages.edithewan")->with("hewan", $hewan);
 	}
 
 	/**
@@ -98,7 +99,19 @@ class HewanController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-			//
+		$this->validate($request, [
+			"nama" => "required",
+			"deskripsi" => "required",
+			"harga" => "required|numeric"
+		]);
+
+		$hewan = Hewan::find($id);
+		$hewan->nama = $request->input("nama");
+		$hewan->deskripsi = $request->input("deskripsi");
+		$hewan->harga = $request->input("harga");
+		$hewan->save();
+
+		return redirect("/hewan")->with("success", "Hewan berhasil diubah");
 	}
 
 	/**

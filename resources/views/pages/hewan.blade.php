@@ -13,11 +13,13 @@
 	@endif
 
 	@if (count($listhewan) > 0)
+	@foreach ($listhewan as $hewan)
+	@if ($loop->first || $loop->iteration % 4 == 0)
 	<div class="row">
-		@foreach ($listhewan as $hewan)
+	@endif
 		<div class="col-4">
 			<div class="card">
-			@if (!$hewan->gambarhewan->isEmpty() && $hewan->gambarhewan[0]->path != null)
+			@if (!$hewan->gambarhewan->isEmpty())
 				<img class="card-img-top mw-100" src="{{ asset("storage/{$hewan->gambarhewan[0]->path}") }}" alt=":v">
 			@else
 				<img class="card-img-top mw-100" src="{{ asset("storage/default.png") }}" alt=":v">
@@ -28,15 +30,17 @@
 					<a class="card-link btn btn-primary" href="{{ url("/hewan/{$hewan->id}") }}">Lihat</a>
 					@if (Auth::user() && Auth::user()->admin == 1)
 					<a class="card-link btn btn-primary" href="{{ url("hewan/{$hewan->id}/edit") }}">Edit</a>
-					<a class="card-link btn btn-danger" href="{{ url("hewan/{$hewan->id}") }}">Hapus</a>
+					{!! Form::open(["action" => ["HewanController@destroy", $hewan->id], "method" => "DELETE", "class" => "card-link d-inline"]) !!}
+					{!! Form::submit("Delete", ["class" => "btn btn-danger"]) !!}
+					{!! Form::close() !!}
 					@endif
 				</div>
 			</div>
 		</div>
-	@if ($loop->iteration % 3 == 0)
+	@if ($loop->last || $loop->iteration % 4 == 0)
 	</div>
 	@endif
-		@endforeach
+	@endforeach
 	@else
 	<div class="jumbotron text-center">
 		<h1>Tidak ada hewan tersedia :(</h1>
