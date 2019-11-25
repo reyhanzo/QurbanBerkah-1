@@ -26,7 +26,9 @@
 					@endif
 				</div>
 				<div class="col-8">
-					<p>{{ $hewan->id }}</p>
+					@if (Auth::user() && Auth::user()->admin == 1)
+						<p>{{ $hewan->id }}</p>
+					@endif	
 					<p>{{ $hewan->nama }}</p>
 					<p>{{ $hewan->deskripsi }}</p>
 					<p>Rp{{ $hewan->harga }}</p>
