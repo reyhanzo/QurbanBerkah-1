@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Hewan;
+use App\GambarHewan;
 
 class HewanController extends Controller
 {
@@ -41,6 +42,27 @@ class HewanController extends Controller
 			"deskripsi" => "required",
 			"harga" => "numeric"
 		]);
+
+		$hewan = new Hewan();
+		$hewan->nama = $request->input("nama");
+		$hewan->deskripsi = $request->input("deskripsi");
+		$hewan->harga = $request->input("harga");
+		$hewan->save();
+
+		foreach ($request->file("gambarhewan") as $value) {
+			$gambar = new GambarHewan();
+			$gambar->hewan_id = $hewan->id;
+			$fullname = $value->getClientOriginalName();
+			$filename = pathinfo($fullname, PATHINFO_FILENAME);
+			$ext = $value->getClientOriginalExtension();
+			$timenow = time();
+			$storedname = "{$filename}_{$timenow}.{$ext}";
+			$value->storeAs("public", $storedname);
+			$gambar->path = $storedname;
+			$gambar->save();
+		}
+
+		return redirect("/hewan")->with("success", "Hewan berhasil ditambah");
 	}
 
 	/**

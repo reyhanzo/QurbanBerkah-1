@@ -5,18 +5,18 @@
 	<div class="mb-3">
 		<a class="btn btn-primary" href="{{ url("/hewan") }}">Kembali</a>
 	</div>
-	<div id="gambarhewan" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<div class="row">
-				<div class="col-4">
-					@if (!$hewan->gambarhewan->isEmpty() && $hewan->gambarhewan->path != null)
+	<div class="row">
+		<div class="col-4">
+			<div id="gambarhewan" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					@if (!$hewan->gambarhewan->isEmpty())
 					@foreach ($hewan->gambarhewan as $gambar)
 					@if ($loop->index == 0)
 					<div class="carousel-item active">
 					@else
 					<div class="carousel-item">
 					@endif
-						<img class="d-block w-100" src="{{ asset("storage/{$hewan->gambarhewan->path}") }}" alt=":v">
+						<img class="d-block w-100" src="{{ asset("storage/{$gambar->path}") }}" alt=":v">
 					</div>
 					@endforeach
 					@else
@@ -25,6 +25,8 @@
 					</div>
 					@endif
 				</div>
+			</div>
+		</div>
 				<div class="col-8">
 					@if (Auth::user() && Auth::user()->admin == 1)
 						<p>{{ $hewan->id }}</p>

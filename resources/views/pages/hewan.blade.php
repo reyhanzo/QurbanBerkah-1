@@ -5,7 +5,7 @@
 	<div class="text-center">
 		<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
 	</div>
-
+	@include('layouts.messages')
 	@if (Auth::user() && Auth::user()->admin == 1)
 	<div class="mb-3">
 		<a class="btn btn-primary" href="{{ url("/hewan/create") }}">Tambah</a>
@@ -17,8 +17,8 @@
 		@foreach ($listhewan as $hewan)
 		<div class="col-4">
 			<div class="card">
-			@if (!$hewan->gambarhewan->isEmpty() && $hewan->gambarhewan->path != null)
-				<img class="card-img-top mw-100" src="{{ asset("storage/{$hewan->gambarhewan->path}") }}" alt=":v">
+			@if (!$hewan->gambarhewan->isEmpty() && $hewan->gambarhewan[0]->path != null)
+				<img class="card-img-top mw-100" src="{{ asset("storage/{$hewan->gambarhewan[0]->path}") }}" alt=":v">
 			@else
 				<img class="card-img-top mw-100" src="{{ asset("storage/default.png") }}" alt=":v">
 			@endif	
@@ -33,10 +33,9 @@
 				</div>
 			</div>
 		</div>
-	@if ($loop->index % 3 == 0)
+	@if ($loop->iteration % 3 == 0)
 	</div>
 	@endif
-	
 		@endforeach
 	@else
 	<div class="jumbotron text-center">
