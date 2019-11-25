@@ -36,7 +36,11 @@ class HewanController extends Controller
 	 */
 	public function store(Request $request)
 	{
-			//
+		$this->validate($request, [
+			"nama" => "required",
+			"deskripsi" => "required",
+			"harga" => "numeric"
+		]);
 	}
 
 	/**

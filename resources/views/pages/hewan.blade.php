@@ -28,7 +28,7 @@
 					<a class="card-link btn btn-primary" href="{{ url("/hewan/{$hewan->id}") }}">Lihat</a>
 					@if (Auth::user() && Auth::user()->admin == 1)
 					<a class="card-link btn btn-primary" href="{{ url("hewan/{$hewan->id}/edit") }}">Edit</a>
-					<a class="card-link btn btn-danger" href="{{ url("hewan/{$hewan->id}/edit") }}">Hapus</a>
+					<a class="card-link btn btn-danger" href="{{ url("hewan/{$hewan->id}") }}">Hapus</a>
 					@endif
 				</div>
 			</div>
