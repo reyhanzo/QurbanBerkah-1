@@ -17,6 +17,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url("/pakan") }}">Jadwal Pekan</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url("/angsuran") }}">Program Angsuran</a>
+				</li>
 			</ul>
 
 			<!-- Right Side Of Navbar -->

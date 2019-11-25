@@ -18,6 +18,14 @@ class PagesController extends Controller
 		return view("pages.tambahhewan");
 	}
 
+	public function edithewan(){
+		return view("pages.edithewan");
+	}
+
+	public function angsuran(){
+		return view("pages.angsuran");
+	}
+
 	public function pakan() {
 		return view("pages.pakan");
 	}
