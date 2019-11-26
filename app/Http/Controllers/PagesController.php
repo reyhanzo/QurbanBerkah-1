@@ -3,42 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Hewan;
 
 class PagesController extends Controller
 {
-	public function home() {
+	public function home()
+	{
 		return view("pages.homepage");
 	}
 
-	public function hewan() {
+	public function hewan()
+	{
 		return view("pages.hewan");
 	}
 
-	public function tambahhewan(){
+	public function tambahhewan()
+	{
 		return view("pages.tambahhewan");
 	}
 
-	public function edithewan(){
+	public function edithewan()
+	{
 		return view("pages.edithewan");
 	}
 
-	public function angsuran(){
+	public function angsuran()
+	{
 		return view("pages.angsuran");
 	}
 
-	public function pakan() {
+	public function pakan()
+	{
 		return view("pages.pakan");
 	}
-	
-	public function pengguna() {
-		return view("pages.pengguna");
+
+	public function pengguna()
+	{
+		$pengguna = User::all()->where("admin", "=", "0");
+		return view("pages.pengguna")->with("pengguna", $pengguna);
 	}
 
-	public function tambahpengguna() {
+	public function tambahpengguna()
+	{
 		return view("pages.tambahpengguna");
 	}
 
-	public function editpengguna() {
+	public function editpengguna()
+	{
 		return view("pages.editpengguna");
 	}
 }

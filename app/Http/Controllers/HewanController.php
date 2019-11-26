@@ -16,7 +16,12 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		$listhewan = Hewan::with("gambarhewan")->get();
+		if (auth()->user()->admin == false) {
+			$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
+		}
+		else {
+			$listhewan = Hewan::with("gambarhewan")->get();
+		}
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
 
@@ -113,6 +118,25 @@ class HewanController extends Controller
 		$hewan->nama = $request->input("nama");
 		$hewan->deskripsi = $request->input("deskripsi");
 		$hewan->harga = $request->input("harga");
+		foreach ($hewan->gambarhewan as $value) {
+			if ($request->input(str_replace([" ", ".", "["], "_", $value->path)) == "hapus") {
+				$value->delete();
+			}
+		}
+		if ($request->has("gambarhewan")) {
+			foreach ($request->file("gambarhewan") as $value) {
+				$gambar = new GambarHewan();
+				$gambar->hewan_id = $hewan->id;
+				$fullname = $value->getClientOriginalName();
+				$filename = pathinfo($fullname, PATHINFO_FILENAME);
+				$ext = $value->getClientOriginalExtension();
+				$timenow = time();
+				$storedname = "{$filename}_{$timenow}.{$ext}";
+				$value->storeAs("public", $storedname);
+				$gambar->path = $storedname;
+				$gambar->save();
+			}
+		}
 		$hewan->save();
 
 		return redirect("/hewan")->with("success", "Hewan berhasil diubah");
@@ -128,8 +152,12 @@ class HewanController extends Controller
 	{
 		$hewan = Hewan::find($id);
 		$hewan->load("gambarhewan");
+		$hewan->load("transaksi");
 		foreach ($hewan->gambarhewan as $value) {
 			Storage::delete("public/{$value->path}");
+			$value->delete();
+		}
+		foreach ($hewan->transaksi as $value) {
 			$value->delete();
 		}
 		$hewan->delete();

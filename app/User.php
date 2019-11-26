@@ -40,4 +40,9 @@ class User extends Authenticatable
 	protected $attributes = [
 		"admin" => false
 	];
+
+	public function transaksi()
+	{
+		return $this->hasMany("App\Transaction");
+	}
 }

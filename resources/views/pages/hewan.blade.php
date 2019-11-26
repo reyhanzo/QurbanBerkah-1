@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-	<div class="text-center">
+	<div class="mb-3 text-center">
 		<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
 	</div>
 	@include('layouts.messages')
@@ -15,7 +15,7 @@
 	@if (count($listhewan) > 0)
 	@foreach ($listhewan as $hewan)
 	@if ($loop->first || $loop->iteration % 4 == 0)
-	<div class="row">
+	<div class="row mb-3">
 	@endif
 		<div class="col-4">
 			<div class="card">
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 		</div>
-	@if ($loop->last || $loop->iteration % 4 == 0)
+	@if ($loop->last || $loop->iteration % 3 == 0)
 	</div>
 	@endif
 	@endforeach

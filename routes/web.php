@@ -16,6 +16,9 @@ Route::get("/pakan", "PagesController@pakan");
 Route::resource("hewan", "HewanController");
 Route::get("/angsuran", "PagesController@angsuran");
 Route::get("/pengguna", "PagesController@pengguna");
+Route::get("/pengguna/{id}", "TransaksiController@perorang");
+Route::post("/hewan/{id}", "TransaksiController@beli");
+Route::post("/pengguna/{id}", "TransaksiController@konfirmasi");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
