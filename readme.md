@@ -2,21 +2,21 @@
 Dibuat untuk menyelesaikan tugas :v
 ## Catatan dan masalah deployment
 1. Di MySQL cukup buat DB aja (defaultnya qurbanberkah, edit di .env kalo beda)
-2. Install folder `vendor` di folder. execute di folder proyeknya
+2. Install folder `vendor` di folder. execute di folder proyeknya (pastikan ada composer dan npm)
 ```
-composer update
+composer install
+npm install && npm run dev
 ```
 3. Pakai migrations, jangan buat tabel sendiri
-```bash
+```
 php artisan migrate
 ```
-4. Datanya belum ada, input juga belum bisa lewat web
 5. Belum sampe buat form, tapi udah install laravelcollective/html
-```bash
+```
 composer require laravelcollective/html
 ```
 6. User auth baru install dari bawaan laravel
-```bash
+```
 composer require laravel/ui --dev
 php artisan ui bootstrap
 ```
@@ -26,3 +26,4 @@ php artisan ui bootstrap
    
    Note2: Kalo gak suka ganti di modelnya, tambahin attribute $table, selengkapnya cek [docs](https://laravel.com/docs/master/eloquent)
 8. [artisan-view](https://github.com/svenluijten/artisan-view) < generate blade
+9. Kalau bisa pakai vhostsnya Apache, menggunakan `php artisan serve` tidak dijamin
