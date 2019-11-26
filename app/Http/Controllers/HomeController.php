@@ -26,7 +26,6 @@ class HomeController extends Controller
 	{
 		$listtransaksi = Transaction::where("user_id", auth()->user()->id)->get();
 		$listtransaksi->load("hewan");
-		//return $listtransaksi;
 		return view('home')->with("listtransaksi", $listtransaksi);
 	}
 }

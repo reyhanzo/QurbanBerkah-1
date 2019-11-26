@@ -37,9 +37,11 @@
 			<p>{{ $hewan->deskripsi }}</p>
 			<p><b>Harga Hewan</b></p>
 			<p>Rp{{ $hewan->harga }}</p>
+			@if (Auth::user())
 			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
 			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}
 			{!! Form::close() !!}
+			@endif
 		</div>
 	</div>
 </div>

@@ -16,7 +16,12 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
+		if (auth()->user()->admin == false) {
+			$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
+		}
+		else {
+			$listhewan = Hewan::with("gambarhewan")->get();
+		}
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
 
@@ -147,8 +152,12 @@ class HewanController extends Controller
 	{
 		$hewan = Hewan::find($id);
 		$hewan->load("gambarhewan");
+		$hewan->load("transaksi");
 		foreach ($hewan->gambarhewan as $value) {
 			Storage::delete("public/{$value->path}");
+			$value->delete();
+		}
+		foreach ($hewan->transaksi as $value) {
 			$value->delete();
 		}
 		$hewan->delete();

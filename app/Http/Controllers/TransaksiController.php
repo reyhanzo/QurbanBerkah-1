@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Hewan;
 use App\Transaction;
+use App\User;
 
 class TransaksiController extends Controller
 {
@@ -20,5 +21,23 @@ class TransaksiController extends Controller
 		$hewan->save();
 
 		return redirect("/hewan")->with("success", "Hewan berhasil dibeli");
+	}
+
+	public function perorang($id) {
+		$transaksi = Transaction::where("user_id", "=", $id)->get();
+		$transaksi->load("hewan");
+		$pengguna = User::find($id);
+		$data = [
+			"transaksi" => $transaksi,
+			"user" => $pengguna
+		];
+		return view("pages.detailpengguna")->with("data", $data);
+	}
+
+	public function konfirmasi($id) {
+		$transaksi = Transaction::find($id);
+		$transaksi->status = "Terbeli";
+		$transaksi->save();
+		return redirect("/pengguna")->with("success", "Transaksi terkonfirmasi");
 	}
 }
