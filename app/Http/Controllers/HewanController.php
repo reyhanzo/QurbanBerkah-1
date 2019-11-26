@@ -16,7 +16,7 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		if (auth()->user()->admin == false) {
+		if (auth()->user() && auth()->user()->admin == false) {
 			$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
 		}
 		else {
