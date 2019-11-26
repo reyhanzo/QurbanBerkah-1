@@ -13,10 +13,10 @@ class CreateTransactionTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('transaction', function (Blueprint $table) {
+		Schema::create('transactions', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->bigInteger('hewans_id');
-			$table->bigInteger('users_id');
+			$table->bigInteger('hewan_id');
+			$table->bigInteger('user_id');
 			$table->string('status');
 			$table->timestamps();
 		});
@@ -29,6 +29,6 @@ class CreateTransactionTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('transaction');
+		Schema::dropIfExists('transactions');
 	}
 }

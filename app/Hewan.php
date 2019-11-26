@@ -18,4 +18,9 @@ class Hewan extends Model
 	{
 		return $this->hasMany("App\GambarHewan");
 	}
+
+	public function transaksi()
+	{
+		return $this->hasMany("App\Transaction");
+	}
 }

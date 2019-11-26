@@ -28,17 +28,18 @@
 				</div>
 			</div>
 		</div>
-				<div class="col-8">
-					@if (Auth::user() && Auth::user()->admin == 1)
-						<p>{{ $hewan->id }}</p>
-					@endif	
-					<p><b>Nama Hewan</b> : {{ $hewan->nama }}</p>
-					<p><b>Deskripsi Hewan</b></p>
-					<p>{{ $hewan->deskripsi }}</p>
-					<p><b>Harga Hewan</b></p>
-					<p>Rp{{ $hewan->harga }}</p>
-				</div>
-			</div>
+		<div class="col-8">
+			@if (Auth::user() && Auth::user()->admin == 1)
+			<p>{{ $hewan->id }}</p>
+			@endif	
+			<p><b>Nama Hewan</b> : {{ $hewan->nama }}</p>
+			<p><b>Deskripsi Hewan</b></p>
+			<p>{{ $hewan->deskripsi }}</p>
+			<p><b>Harga Hewan</b></p>
+			<p>Rp{{ $hewan->harga }}</p>
+			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
+			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}
+			{!! Form::close() !!}
 		</div>
 	</div>
 </div>

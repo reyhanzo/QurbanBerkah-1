@@ -16,7 +16,7 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		$listhewan = Hewan::with("gambarhewan")->get();
+		$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
 
