@@ -13,6 +13,11 @@
 						{{ session('status') }}
 					</div>
 					@endif
+					
+					<div id="paragraph">
+						<p>Silahkan Transfer ke nomer rekening 0756327645785624 (Bank Mandiri) 
+							atas nama Yanto dan kirim bukti transfer ke nomer 082140849666</p>
+					</div>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
