@@ -37,4 +37,8 @@
 		{!! Form::close() !!}
 	</div>
 </div>
+<script src="{{ asset("js/ckeditor.js") }}"></script>
+<script>
+	ClassicEditor.create(document.querySelector("#deskripsi")).catch(error => {console.error(error);});
+</script>
 @endsection
