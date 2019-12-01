@@ -2,10 +2,9 @@
 Dibuat untuk menyelesaikan tugas :v
 ## Catatan dan masalah deployment
 1. Di MySQL cukup buat DB aja (defaultnya qurbanberkah, edit di .env kalo beda)
-2. Install folder `vendor` di folder. execute di folder proyeknya (pastikan ada composer dan npm)
+2. Install folder `vendor` di folder. execute di folder proyeknya (pastikan ada composer)
 ```
 composer install
-npm install && npm run dev
 ```
 3. Pakai migrations, jangan buat tabel sendiri
 ```
@@ -18,7 +17,8 @@ composer require laravelcollective/html
 6. User auth baru install dari bawaan laravel
 ```
 composer require laravel/ui --dev
-php artisan ui bootstrap
+php artisan ui bootstrap --auth
+npm install && npm run dev
 ```
 7. DB ada 3, hewans, gambarhewans, users (bawaan laravel).
 
