@@ -40,4 +40,12 @@ class TransaksiController extends Controller
 		$transaksi->save();
 		return redirect("/pengguna")->with("success", "Transaksi terkonfirmasi");
 	}
+
+	public function batal($id) {
+		$transaksi = Transaction::find($id);
+		$transaksi->hewan->status = 0;
+		$transaksi->hewan->save();
+		$transaksi->delete();
+		return redirect("/home")->with("success", "Transaksi berhasil dibatalkan");
+	}
 }

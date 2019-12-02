@@ -46,7 +46,8 @@ class HewanController extends Controller
 		$this->validate($request, [
 			"nama" => "required",
 			"deskripsi" => "required",
-			"harga" => "required|numeric"
+			"harga" => "required|numeric",
+			"gambarhewan" => "nullable|image"
 		]);
 
 		$hewan = new Hewan();
