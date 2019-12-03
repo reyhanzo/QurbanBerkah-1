@@ -26,7 +26,7 @@
 			@endif	
 				<div class="card-body">
 					<h4 class="card-title">{{ $hewan->nama }}</h4>
-					<p class="card-text">Rp{{ $hewan->harga }}</p>
+					<p class="card-text">Rp. {{ $hewan->harga }}</p>
 					<a class="card-link btn btn-primary" href="{{ url("/hewan/{$hewan->id}") }}">Lihat</a>
 					@if (Auth::user() && Auth::user()->admin == 1)
 					<a class="card-link btn btn-primary" href="{{ url("hewan/{$hewan->id}/edit") }}">Edit</a>
