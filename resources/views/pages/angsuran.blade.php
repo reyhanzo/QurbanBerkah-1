@@ -28,29 +28,29 @@
 		melakukan sejumlah angsuran dalam jangka waktu yang ditentukan. total dari angsuran akan digunakan
 		untuk membeli hewan Qurban yang tersedia.</p>
 	</div>
-	<br>
-	<br>
-	<br>
-
-	<div class="table">
-		<table id="table_table">
-			<tr>
-				<th>A</th>
-				<th>B</th>
-			</tr>
-			<tr>
-				<td>C</td>
-				<td>D</td>
-			</tr>
-			<tr>
-				<td>E</td>
-				<td>F</td>
-			</tr>
-			<tr>
-				<td>G</td>
-				<td>H</td>
-			</tr>
-		</table>
+	<div class="row">
+		<div class="col-6">
+			<div class="card h-75">
+				<div class="card-body h-75">
+						<img class="card-img-top h-100" src="{{ asset("hewan_cicil/sapi.jpg") }}" alt="sapi">
+						<br><br><br>
+						<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan4")}}">12x Angsuran</a>
+						<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan5")}}">24x Angsuran</a>
+						<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan6")}}">48x Angsuran</a>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-6">
+				<div class="card h-75">
+					<div class="card-body h-100">
+							<img class="card-img-top h-100" src="{{ asset("hewan_cicil/kambing.jpg") }}" alt="sapi">
+							<br><br><br>
+							<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan1")}}">6x Angsuran</a>
+							<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan2")}}">12x Angsuran</a>
+							<a class="text-white btn btn-primary" href="{{url("angsuran/cicilan3")}}">20x Angsuran</a>
+					</div>
+			</div>
 	</div>
 
 </div>

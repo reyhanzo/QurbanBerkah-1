@@ -47,7 +47,7 @@ class HewanController extends Controller
 			"nama" => "required",
 			"deskripsi" => "required",
 			"harga" => "required|numeric",
-			"gambarhewan" => "nullable|image"
+			"gambarhewan[]" => "nullable|image"
 		]);
 
 		$hewan = new Hewan();

@@ -53,4 +53,34 @@ class PagesController extends Controller
 	{
 		return view("pages.editpengguna");
 	}
+
+	public function cicilan1()
+	{
+		return view("pages.cicilan1");
+	}
+
+	public function cicilan2()
+	{
+		return view("pages.cicilan2");
+	}
+
+	public function cicilan3()
+	{
+		return view("pages.cicilan3");
+	}
+
+	public function cicilan4()
+	{
+		return view("pages.cicilan4");
+	}
+
+	public function cicilan5()
+	{
+		return view("pages.cicilan5");
+	}
+
+	public function cicilan6()
+	{
+		return view("pages.cicilan6");
+	}
 }
