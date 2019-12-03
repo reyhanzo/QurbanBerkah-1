@@ -11,12 +11,12 @@
 
 		#table_table{
 			margin: auto;
-			width: 50%;
+			width: 70%;
 		}
 
 		#paragraph{
 			margin: auto;
-			width: 70%;
+			width: 80%;
 		}
 	</style>
 
@@ -35,18 +35,30 @@
 	<div class="table">
 		<table id="table_table">
 			<tr>
-				<th>A</th>
-				<th>B</th>
+				<th>Besar Angsuran</th>
+				<th>Lama Angsuran</th>
+				<th>Cicilan per Bulan</th>
 			</tr>
 			<tr>
-				<td>C</td>
-				<td>D</td>
+				<td>Rp. 3.000.000</td>
+				<td>
+					3 Bulan<br>
+					6 Bulan<br>
+					12 Bulan
+				</td>
+				<td>
+					Rp 1.000.000 / Bulan<br>
+					Rp 500.000 / Bulan<br>
+					RP 125.000 / Bulan
+				</td>
 			</tr>
 			<tr>
+				<td>E</td>
 				<td>E</td>
 				<td>F</td>
 			</tr>
 			<tr>
+				<td>E</td>
 				<td>G</td>
 				<td>H</td>
 			</tr>
