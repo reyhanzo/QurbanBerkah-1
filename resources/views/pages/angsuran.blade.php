@@ -30,40 +30,34 @@
 	</div>
 	<br>
 	<br>
-	<br>
 
-	<div class="table">
-		<table id="table_table">
-			<tr>
-				<th>Besar Angsuran</th>
-				<th>Lama Angsuran</th>
-				<th>Cicilan per Bulan</th>
-			</tr>
-			<tr>
-				<td>Rp. 3.000.000</td>
-				<td>
-					3 Bulan<br>
-					6 Bulan<br>
-					12 Bulan
-				</td>
-				<td>
-					Rp 1.000.000 / Bulan<br>
-					Rp 500.000 / Bulan<br>
-					RP 125.000 / Bulan
-				</td>
-			</tr>
-			<tr>
-				<td>E</td>
-				<td>E</td>
-				<td>F</td>
-			</tr>
-			<tr>
-				<td>E</td>
-				<td>G</td>
-				<td>H</td>
-			</tr>
-		</table>
+	<div class="card" style="width: 30rem;">
+		<h5 class="card-title" style="text-align: center; padding-top: 13px;">Kambing</h5>
+		<img src="{{ asset("storage/kambing.jfif") }}" class="card-img-top" alt="kambing">
+		<div class="card-body">
+			
+		<div id="myGroup" style="text-align: center;">
+			<button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#keys"><i class="icon-chevron-right"></i> Keys </button>
+			<button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#attrs"><i class="icon-chevron-right"></i> Attributes</button>
+			<button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#edit"><i class="icon-chevron-right"></i> Edit Details</button>
+
+			<div class="accordion-group">
+				<div class="collapse indent" id="keys" data-parent="#myGroup">
+					keys
+				</div>
+
+				<div class="collapse indent" id="attrs" data-parent="#myGroup">
+					attrs
+				</div>
+
+				<div class="collapse" id="edit" data-parent="#myGroup">
+					edit
+				</div>
+		</div>		
+
 	</div>
+
+	
 
 </div>
 
