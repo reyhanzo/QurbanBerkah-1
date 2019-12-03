@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Hewan;
-use App\GambarHewan;
+use App\User;
 
-class HewanController extends Controller
+class UserController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
@@ -26,6 +25,8 @@ class HewanController extends Controller
 		}
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
+
+    //Harusnya fungsi create sama store gaada, soalnya udah dibantu sama bawaan laravel
 
 	/**
 	 * Show the form for creating a new resource.
