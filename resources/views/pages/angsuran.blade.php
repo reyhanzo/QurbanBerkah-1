@@ -41,7 +41,7 @@
 			<button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#attrs"><i class="icon-chevron-right"></i> Attributes</button>
 			<button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#edit"><i class="icon-chevron-right"></i> Edit Details</button>
 
-			<div class="accordion-group">
+			<div class="accordion-group" style="padding: 10px;">
 				<div class="collapse indent" id="keys" data-parent="#myGroup">
 					keys
 				</div>
