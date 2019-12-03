@@ -16,11 +16,13 @@ class HewanController extends Controller
 	 */
 	public function index()
 	{
-		if (auth()->user() && auth()->user()->admin == false) {
-			$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
+		if (auth()->user() && auth()->user()->admin == true) {
+			//$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
+			$listhewan = Hewan::with("gambarhewan")->get();
 		}
 		else {
-			$listhewan = Hewan::with("gambarhewan")->get();
+			//$listhewan = Hewan::with("gambarhewan")->get();
+			$listhewan = Hewan::with("gambarhewan")->where("status", "=", false)->get();
 		}
 		return view("pages.hewan")->with("listhewan", $listhewan);
 	}
