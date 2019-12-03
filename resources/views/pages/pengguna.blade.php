@@ -9,12 +9,12 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr class="bg-success">
-				<th>Pengguna</th>
+				<th>Nama</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($pengguna as $x)
+			@foreach ($listpengguna as $x)
 			<tr>
 				<td>{{ $x->name }}</td>
 				<td>
