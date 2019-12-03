@@ -4,7 +4,7 @@
 <div class="container">
 	<h1 class="text-center">Detail pengguna "{{ $data["user"]->name }}"</h1>
 	<div class="mb-3">
-		<a class="btn btn-primary" href="{{ url("/pengguna") }}">Kembali</a>
+		<a class="btn btn-primary" href="{{ url("/home") }}">Kembali</a>
 	</div>
 	<table class="table table-bordered">
 		<thead>

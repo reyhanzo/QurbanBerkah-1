@@ -11,12 +11,12 @@
 
 		#table_table{
 			margin: auto;
-			width: 50%;
+			width: 70%;
 		}
 
 		#paragraph{
 			margin: auto;
-			width: 70%;
+			width: 80%;
 		}
 	</style>
 
@@ -52,6 +52,8 @@
 					</div>
 			</div>
 	</div>
+
+	
 
 </div>
 

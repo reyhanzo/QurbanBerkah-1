@@ -45,4 +45,8 @@ class User extends Authenticatable
 	{
 		return $this->hasMany("App\Transaction");
 	}
+	public function cicilan()
+	{
+		return $this->hasMany("App\Cicilan");
+	}
 }

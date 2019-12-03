@@ -37,12 +37,10 @@
 			<p>{!! $hewan->deskripsi !!}</p>
 			<p><b>Harga Hewan</b></p>
 			<p>Rp{{ $hewan->harga }}</p>
-			@if (Auth::user() && Auth::user()->admin != 1)
-			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST", "class" => "d-inline"]) !!}
+			@if (Auth::user() && Auth::user()->admin!=1)
+			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
 			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}
 			{!! Form::close() !!}
-
-			<a class="btn btn-primary" href="{{ url("/hewan/cicil/{$hewan->id}") }}">Cicil</a>
 			@endif
 		</div>
 	</div>

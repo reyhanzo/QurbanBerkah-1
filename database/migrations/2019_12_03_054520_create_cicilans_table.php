@@ -15,11 +15,10 @@ class CreateCicilansTable extends Migration
 	{
 		Schema::create('cicilans', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->bigInteger("hewan_id");
 			$table->bigInteger("user_id");
 			$table->integer("durasi");
-			$table->double("perbulan");
-			$table->integer("tercicil");
+			$table->integer("perbulan");
+			$table->integer("status");
 			$table->timestamps();
 		});
 	}
