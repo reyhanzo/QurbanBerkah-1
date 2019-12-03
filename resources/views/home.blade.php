@@ -8,7 +8,11 @@
 				<div class="card-header">Daftar pembelian</div>
 
 				<div class="card-body">
-					@include('layouts.messages')
+					@if (session('status'))
+					<div class="alert alert-success" role="alert">
+						{{ session('status') }}
+					</div>
+					@endif
 					
 					<div id="paragraph">
 						<p>Silahkan Transfer ke nomer rekening 0756327645785624 (Bank Mandiri) 
@@ -16,11 +20,10 @@
 					</div>
 					<table class="table table-bordered">
 						<thead>
-							<tr class="bg-success">
+							<tr>
 								<th>Nama hewan</th>
 								<th>Harga</th>
 								<th>Status</th>
-								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -29,11 +32,6 @@
 								<td>{{ $x->hewan->nama }}</td>
 								<td>Rp{{ $x->hewan->harga }}</td>
 								<td>{{ $x->status }}</td>
-								<td>
-									{!! Form::open(["action" => ["TransaksiController@batal", $x->id], "method" => "POST"]) !!}
-									{!! Form::submit("Batal", ["class" => "btn btn-danger"]) !!}
-									{!! Form::close() !!};;;
-								</td>
 							</tr>
 							@endforeach
 						</tbody>

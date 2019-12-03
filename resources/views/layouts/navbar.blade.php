@@ -14,6 +14,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url("/hewan") }}">Lihat Hewan</a>
 				</li>
+				@if (Auth::user() && Auth::user()->admin == 1)
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url("/pengguna") }}">Lihat Pengguna</a>
+					</li>
+				@endif
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url("/pakan") }}">Jadwal Pakan</a>
 				</li>
