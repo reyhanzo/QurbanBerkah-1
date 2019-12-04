@@ -24,9 +24,9 @@
 	<br>
 	<div id="paragraph">
 		<p>Program Angsuran QurbanBerkah adalah sebuah program untuk memudahkan pembeli dari golongan
-		kurang mampu untuk membeli hewan qurban. Cara kerja program ini adalah calon pembeli diwajibkan
-		melakukan sejumlah angsuran dalam jangka waktu yang ditentukan. total dari angsuran akan digunakan
-		untuk membeli hewan Qurban yang tersedia.</p>
+		menengah kebawah untuk membeli hewan qurban. Cara kerja program ini adalah calon pembeli diwajibkan
+		melakukan sejumlah angsuran dalam jangka waktu yang telah dipilih. Jika ditengah perjalanan pengangsuran
+		terjadi pembatalan angsuran maka uang angsuran akan dikembalikan dengan ketentuan yang telah disepakati.</p>
 	</div>
 	<div class="row">
 		<div class="col-6">
