@@ -30,13 +30,14 @@
 		</div>
 		<div class="col-8">
 			@if (Auth::user() && Auth::user()->admin == 1)
-			<p>{{ $hewan->id }}</p>
+			<p><b>Id Hewan</b> : {{ $hewan->id }}</p>
+			<p><b>Status</b> : {{ $hewan->status }}</p>
 			@endif	
 			<p><b>Nama Hewan</b> : {{ $hewan->nama }}</p>
 			<p><b>Deskripsi Hewan</b></p>
 			<p>{!! $hewan->deskripsi !!}</p>
 			<p><b>Harga Hewan</b></p>
-			<p>Rp{{ $hewan->harga }}</p>
+			<p>Rp. {{ $hewan->harga }}</p>
 			@if (Auth::user() && Auth::user()->admin!=1)
 			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
 			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}

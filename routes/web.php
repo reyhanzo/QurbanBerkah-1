@@ -22,6 +22,7 @@ Route::post("/pengguna/{id}", "TransaksiController@konfirmasi");
 Route::get('hewan/cicil/{id}', "CicilanController@index");
 Route::post('hewan/cicil/{id}', "CicilanController@cicil");
 Route::post('/transaksi/{id}/batal', "TransaksiController@batal");
+
 Route::get('angsuran/cicilan1', "PagesController@cicilan1");
 Route::get('angsuran/cicilan2', "PagesController@cicilan2");
 Route::get('angsuran/cicilan3', "PagesController@cicilan3");
@@ -37,6 +38,7 @@ Route::get("angsuran/cicilan6/{tipehewan}/{id}", "cicilanController@beli");
 Route::get("angsuran/cicilan6/{tipehewan}/{id}", "cicilanController@beli");
 Route::get("angsuran/cicilan/finishcicilan", "cicilanController@index");
 Route::post('/cicilan/{id}/batal', "cicilanController@batal");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
