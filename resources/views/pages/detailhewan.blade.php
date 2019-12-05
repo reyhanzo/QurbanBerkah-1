@@ -30,14 +30,31 @@
 		</div>
 		<div class="col-8">
 			@if (Auth::user() && Auth::user()->admin == 1)
-			<p><b>Id Hewan</b> : {{ $hewan->id }}</p>
-			<p><b>Status</b> : {{ $hewan->status }}</p>
-			@endif	
-			<p><b>Nama Hewan</b> : {{ $hewan->nama }}</p>
-			<p><b>Deskripsi Hewan</b></p>
-			<p>{!! $hewan->deskripsi !!}</p>
-			<p><b>Harga Hewan</b></p>
-			<p>Rp. {{ $hewan->harga }}</p>
+			<div class="card mb-3">
+				<div class="card-body">
+					<h6 class="card-title border-bottom pb-1">ID Hewan</h6>
+					<h5 class="card-text">{{ $hewan->id }}</h5>
+				</div>
+			</div>
+			<div class="card mb-3">
+				<div class="card-body">
+					<h6 class="card-title border-bottom pb-1">Status</h6>
+					<h5 class="card-text">{{ $hewan->status }}</h5>
+				</div>
+			</div>
+			@endif
+			<div class="card mb-3">
+				<div class="card-body">
+					<h6 class="card-title border-bottom pb-1">Nama Hewan</h6>
+					<h5 class="card-text">{{ $hewan->nama }}</h5>
+				</div>
+			</div>
+			<div class="card mb-3">
+				<div class="card-body">
+					<h6 class="card-title border-bottom pb-1">Deskripsi</h6>
+					<h5 class="card-text">{!! $hewan->deskripsi !!}</h5>
+				</div>
+			</div>
 			@if (Auth::user() && Auth::user()->admin!=1)
 			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
 			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}

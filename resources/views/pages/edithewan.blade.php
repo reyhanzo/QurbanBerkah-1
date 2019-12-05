@@ -53,6 +53,6 @@
 </div>
 <script src="{{ asset("js/ckeditor.js") }}"></script>
 <script>
-	ClassicEditor.create(document.querySelector("#editor")).catch(error => {console.error(error);});
+	ClassicEditor.create(document.querySelector("#deskripsi")).catch(error => {console.error(error);});
 </script>
 @endsection
