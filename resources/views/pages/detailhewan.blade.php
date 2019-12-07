@@ -55,7 +55,7 @@
 					<h5 class="card-text">{!! $hewan->deskripsi !!}</h5>
 				</div>
 			</div>
-			@if (Auth::user() && Auth::user()->admin!=1)
+			@if (Auth::user() && Auth::user()->admin != 1)
 			{!! Form::open(["action" => ["TransaksiController@beli", $hewan->id], "method" => "POST"]) !!}
 			{!! Form::submit("Beli", ["class" => "btn btn-primary"]) !!}
 			{!! Form::close() !!}

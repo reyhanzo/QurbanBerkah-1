@@ -22,6 +22,7 @@ Route::post("/pengguna/{id}", "TransaksiController@konfirmasi");
 Route::get('hewan/cicil/{id}', "CicilanController@index");
 Route::post('hewan/cicil/{id}', "CicilanController@cicil");
 Route::post('/transaksi/{id}/batal', "TransaksiController@batal");
+Route::get("/cicilan/{id}", "cicilanController@lihat");
 
 Route::get('angsuran/cicilan1', "PagesController@cicilan1");
 Route::get('angsuran/cicilan2', "PagesController@cicilan2");

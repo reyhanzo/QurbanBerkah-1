@@ -32,9 +32,10 @@
 								<td>{{ $x->jenishewan }}</td>
 								<td>{{ $x->durasi }} Bulan</td>
 								<td class="text-center">
-                                        {!! Form::open(["url" => "/cicilan/{$x->id}/batal", "method" => "POST"]) !!}
-                                        {!! Form::submit("Batal", ["class" => "btn btn-danger"]) !!}
-                                        {!! Form::close() !!}
+								<a class="btn btn-primary" href="{{ url("/cicilan/{$x->id}") }}">Lihat Detail</a>
+								{!! Form::open(["url" => "/cicilan/{$x->id}/batal", "method" => "POST", "class" => "d-inline"]) !!}
+								{!! Form::submit("Batal", ["class" => "btn btn-danger"]) !!}
+								{!! Form::close() !!}
 								</td>
 							</tr>
 							@endforeach
