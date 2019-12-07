@@ -4,8 +4,13 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-10">
+			<div class="mb-3">
+				<a class="btn btn-primary" href="{{ url("/angsuran/cicilan/finishcicilan") }}">Kembali</a>
+			</div>
 			<div class="card">
-				<div class="card-header">Cicilan dengan ID "{{ $data["cicilan"]->id }}"</div>
+				<div class="card-header">
+					Cicilan dengan ID <span class="badge badge-primary">{{ $data["cicilan"]->id }}</span>
+				</div>
 
 				<div class="card-body">
 					@include('layouts.messages')
@@ -40,7 +45,7 @@
 									<td>Rp{{ number_format($data["perbulan"], 2) }}</td>
 									<td>{{ strftime("%B %Y", strtotime("{$data["cicilan"]->created_at} + $i month")) }}</td>
 									<td class="text-center">
-										<button class="btn btn-warning">Menunggu konfirmasi admin . . .</button>
+										<button class="btn btn-warning">Menunggu konfirmasi admin. . .</button>
 									</td>
 								</tr>
 							@endfor

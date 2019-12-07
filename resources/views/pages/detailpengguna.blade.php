@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-	<h1 class="text-center">Detail pengguna "{{ $data["user"]->name }}"</h1>
+	<h1 class="text-center">Detail pengguna <span class="badge badge-primary">{{ $data["user"]->name }}</span></h1>
 	<div class="mb-3">
 		<a class="btn btn-primary" href="{{ url("/home") }}">Kembali</a>
 	</div>
@@ -12,6 +12,7 @@
 				<td>ID transaksi</td>
 				<td>Nama hewan</td>
 				<td>Harga</td>
+				<td>Status</td>
 				<td>Aksi</td>
 			</tr>
 		</thead>
@@ -20,9 +21,10 @@
 			<tr>
 				<td>{{ $x->id }}</td>
 				<td>{{ $x->hewan->nama }}</td>
-				<td>Rp{{ $x->hewan->harga }}</td>
+				<td>Rp{{ number_format($x->hewan->harga, 2) }}</td>
+				<td>{{ $x->status }}</td>
 				<td>
-					@if ($x->status == "Terbeli")
+					@if ($x->status == "Terkonfirmasi oleh admin")
 					<button class="btn btn-success">Terkonfirmasi</button>
 					@else
 					{!! Form::open(["action" => ["TransaksiController@konfirmasi", $x->id], "method" => "POST"]) !!}

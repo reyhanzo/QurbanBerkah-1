@@ -13,7 +13,7 @@ class TransaksiController extends Controller
 		$transaksi = new Transaction();
 		$transaksi->hewan_id = $id;
 		$transaksi->user_id = auth()->user()->id;
-		$transaksi->status = "Dipesan";
+		$transaksi->status = "Menunggu konfirmasi admin. . .";
 		$transaksi->save();
 
 		$hewan = Hewan::find($id);
@@ -36,7 +36,7 @@ class TransaksiController extends Controller
 
 	public function konfirmasi($id) {
 		$transaksi = Transaction::find($id);
-		$transaksi->status = "Terbeli";
+		$transaksi->status = "Terkonfirmasi oleh admin";
 		$transaksi->save();
 		return redirect("/home")->with("success", "Transaksi terkonfirmasi");
 	}
