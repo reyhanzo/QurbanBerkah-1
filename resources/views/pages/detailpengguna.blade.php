@@ -10,7 +10,7 @@
 		<thead>
 			<tr class="bg-success">
 				<td>ID transaksi</td>
-				<td>Nama hewan</td>
+				<td>Nama Produk</td>
 				<td>Harga</td>
 				<td>Status</td>
 				<td>Aksi</td>

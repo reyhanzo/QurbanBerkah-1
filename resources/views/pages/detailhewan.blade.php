@@ -2,7 +2,7 @@
 
 @section("content")
 <div class="container">
-	<h1 class="text-center">Detail hewan</h1>
+	<h1 class="text-center">Detail Produk</h1>
 	<div class="mb-3">
 		<a class="btn btn-primary" href="{{ url("/hewan") }}">Kembali</a>
 	</div>
@@ -32,7 +32,7 @@
 			@if (Auth::user() && Auth::user()->admin == 1)
 			<div class="card mb-3">
 				<div class="card-body">
-					<h6 class="card-title border-bottom pb-1">ID Hewan</h6>
+					<h6 class="card-title border-bottom pb-1">ID Produk</h6>
 					<h5 class="card-text">{{ $hewan->id }}</h5>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 			@endif
 			<div class="card mb-3">
 				<div class="card-body">
-					<h6 class="card-title border-bottom pb-1">Nama Hewan</h6>
+					<h6 class="card-title border-bottom pb-1">Nama Produk</h6>
 					<h5 class="card-text">{{ $hewan->nama }}</h5>
 				</div>
 			</div>

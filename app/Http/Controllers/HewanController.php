@@ -73,7 +73,7 @@ class HewanController extends Controller
 			}
 		}
 
-		return redirect("/hewan")->with("success", "Hewan berhasil ditambah");
+		return redirect("/hewan")->with("success", "Produk berhasil ditambah");
 	}
 
 	/**
@@ -143,7 +143,7 @@ class HewanController extends Controller
 		}
 		$hewan->save();
 
-		return redirect("/hewan")->with("success", "Hewan berhasil diubah");
+		return redirect("/hewan")->with("success", "Produk berhasil diubah");
 	}
 
 	/**
@@ -165,6 +165,6 @@ class HewanController extends Controller
 			$value->delete();
 		}
 		$hewan->delete();
-		return redirect("/hewan")->with("success", "Hewan berhasil dihapus");
+		return redirect("/hewan")->with("success", "Produk berhasil dihapus");
 	}
 }

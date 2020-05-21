@@ -32,17 +32,17 @@
 
 			<div class="col-8">
 				<div class="form-group">
-					{!! Form::label("nama", "Nama hewan") !!}
+					{!! Form::label("nama", "Nama Produk") !!}
 					{!! Form::text("nama", $hewan->nama, ["class" => "form-control"]) !!}
 				</div>
 
 				<div class="form-group">
-					{!! Form::label("deskripsi", "Deskripsi hewan") !!}
+					{!! Form::label("deskripsi", "Deskripsi Produk") !!}
 					{!! Form::textarea("deskripsi", $hewan->deskripsi, ["class" => "form-control"]) !!}
 				</div>
 
 				<div class="form-group">
-					{!! Form::label("harga", "Harga hewan") !!}
+					{!! Form::label("harga", "Harga Produk") !!}
 					{!! Form::text("harga", $hewan->harga, ["class" => "form-control"]) !!}
 				</div>
 			</div>

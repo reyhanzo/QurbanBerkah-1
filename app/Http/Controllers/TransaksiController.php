@@ -20,7 +20,7 @@ class TransaksiController extends Controller
 		$hewan->status = true;
 		$hewan->save();
 
-		return redirect("/home")->with("success", "Hewan berhasil dibeli");
+		return redirect("/home")->with("success", "Produk berhasil dibeli");
 	}
 
 	public function perorang($id) {

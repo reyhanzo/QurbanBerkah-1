@@ -11,13 +11,11 @@
 					@include('layouts.messages')
 					
 					<div id="paragraph">
-						<p>Silahkan Transfer ke nomer rekening 0756327645785624 (Bank Mandiri) 
-							atas nama Yanto dan kirim bukti transfer ke nomer 082140849666</p>
 					</div>
 					<table class="table table-bordered table-hover">
 						<thead>
 							<tr>
-								<th>Nama hewan</th>
+								<th>Nama Produk</th>
 								<th>Harga</th>
 								<th>Status</th>
 								<th>Aksi</th>
@@ -35,7 +33,7 @@
 									{!! Form::submit("Batalkan pemesanan", ["class" => "btn btn-danger"]) !!}
 									{!! Form::close() !!}
 									@else
-									<button class="btn btn-success">Transaksi berhasil, hewan sudah menjadi milik anda</button>
+									<button class="btn btn-success">Transaksi berhasil, produk sudah menjadi milik anda</button>
 									@endif
 								</td>
 							</tr>

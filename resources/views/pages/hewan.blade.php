@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="mb-3 text-center">
-		<h1>Lihat dan Beli Hewan Qurban Anda di Sini</h1>
+		<h1>Lihat dan Beli Produk Anda di Sini</h1>
 	</div>
 	@include('layouts.messages')
 	@if (Auth::user() && Auth::user()->admin == 1)
@@ -43,7 +43,7 @@
 	@endforeach
 	@else
 	<div class="jumbotron text-center">
-		<h1>Tidak ada hewan tersedia :(</h1>
+		<h1>Tidak ada produk yang tersedia :(</h1>
 	</div>
 	@endif
 	
